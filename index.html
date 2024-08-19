@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Profile Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Create Your Profile</h1>
+        <form id="profileForm">
+            <!-- Collapsible Personal Information Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Personal Information</h2>
+                <div class="content">
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender <span class="required">*</span></label>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="prefer_not_to_say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="countryCode">Country Code <span class="required">*</span></label>
+                        <select id="countryCode" name="countryCode" required>
+                            <option value="+1">+1 (USA)</option>
+                            <option value="+91">+91 (India)</option>
+                            <!-- More country codes can be added here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required
+                            pattern="\d{10}">
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePhoto">Profile Photo</label>
+                        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="Enter your location (optional)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Educational Details Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Educational Details</h2>
+                <div class="content" id="educationSection">
+                    <div class="education">
+                        <div class="form-group">
+                            <label for="degree">Degree <span class="required">*</span></label>
+                            <select id="degree" name="degree" required>
+                                <option value="" disabled selected>Select your degree</option>
+                                <option value="High School">High School</option>
+                                <option value="Junior College">Junior College</option>
+                                <option value="Bachelor of Science">Bachelor of Science</option>
+                                <option value="Bachelor of Arts">Bachelor of Arts</option>
+                                <option value="Bachelor of Engineering">Bachelor of Engineering</option>
+                                <option value="Master of Science">Master of Science</option>
+                                <option value="Master of Arts">Master of Arts</option>
+                                <option value="Doctor of Philosophy">P.H.D</option>
+                                <option value="Other">Other (Please specify)</option>
+                            </select>
+                            <input type="text" id="degreeOther" name="degreeOther" placeholder="Specify your degree"
+                                style="display: none;">
+                        </div>
+                        <div class="form-group">
+                            <label for="collegeName">College Name <span class="required">*</span></label>
+                            <input type="text" id="collegeName" name="collegeName" placeholder="College Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Course <span class="required">*</span></label>
+                            <input type="text" id="course" name="course" placeholder="Course" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="startYear">Start Year <span class="required">*</span></label>
+                            <input type="number" id="startYear" name="startYear" placeholder="Start Year" min="1900"
+                                max="2100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endYear">Year of Passing <span class="required">*</span></label>
+                            <input type="number" id="endYear" name="endYear" placeholder="Year of Passing" min="1900"
+                                max="2100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="maxGrade">Maximum Possible Grade <span class="required">*</span></label>
+                            <input type="text" id="maxGrade" name="maxGrade" placeholder="Maximum Possible Grade"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="achievedGrade">Achieved Grade <span class="required">*</span></label>
+                            <input type="text" id="achievedGrade" name="achievedGrade" placeholder="Achieved Grade"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="addEducation">Add More Education</button>
+            </div>
+
+            <!-- Collapsible Technical Skills Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Technical Skills</h2>
+                <div class="content" id="skillsSection">
+                    <div class="form-group">
+                        <label for="skills">Technical Skill <span class="required">*</span></label>
+                        <input type="text" id="skills" name="skills" placeholder="Enter a technical skill" required>
+                    </div>
+                </div>
+                <button type="button" id="addSkill">Add More Skills</button>
+            </div>
+
+            <!-- Collapsible Projects Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Projects</h2>
+                <div class="content" id="projectsSection">
+                    <div class="project">
+                        <div class="form-group">
+                            <label for="projectTitle">Project Title <span class="required">*</span></label>
+                            <input type="text" id="projectTitle" name="projectTitle" placeholder="Project Title"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Project Description <span class="required">*</span></label>
+                            <textarea id="projectDescription" name="projectDescription"
+                                placeholder="Describe your project" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectStack">Technology Stack</label>
+                            <input type="text" id="projectStack" name="projectStack"
+                                placeholder="Technology Stack (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="projectLink">Project Code Link (Optional)</label>
+                            <input type="url" id="projectLink" name="projectLink"
+                                placeholder="Project Code Link (Optional)">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="addProject">Add More Projects</button>
+            </div>
+
+            <!-- Collapsible Hobbies Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Hobbies</h2>
+                <div class="content" id="hobbiesSection">
+                    <div class="form-group">
+                        <label for="hobbies">Hobby <span class="required">*</span></label>
+                        <input type="text" id="hobbies" name="hobbies" placeholder="Enter a hobby" required>
+                    </div>
+                </div>
+                <button type="button" id="addHobby">Add More Hobbies</button>
+            </div>
+
+            <!-- Collapsible Coding Profiles Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Coding Profiles</h2>
+                <div class="content">
+                    <div class="form-group">
+                        <label for="github">GitHub Profile</label>
+                        <input type="url" id="github" name="github" placeholder="GitHub Profile (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="leetcode">LeetCode Profile</label>
+                        <input type="url" id="leetcode" name="leetcode" placeholder="LeetCode Profile (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="codeforces">Codeforces Profile</label>
+                        <input type="url" id="codeforces" name="codeforces" placeholder="Codeforces Profile (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="codechef">CodeChef Profile</label>
+                        <input type="url" id="codechef" name="codechef" placeholder="CodeChef Profile (Optional)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible LinkedIn Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Let's Connect</h2>
+                <div class="content">
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile <span class="required">*</span></label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn Profile" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Heading Line Section -->
+            <div class="form-section">
+                <h2 onclick="toggleSection(this)" class="center">Heading Line</h2>
+                <div class="content">
+                    <div class="form-group">
+                        <label for="headingLine">Heading Line</label>
+                        <input type="text" id="headingLine" name="headingLine"
+                            placeholder="Enter a heading (Default: 'Welcome to my Profile')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Generate Profile</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

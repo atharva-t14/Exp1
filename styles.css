@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container {
+    background: #d4e4f3;
+    border-radius: 12px;
+    padding: 20px 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* Center-aligned section headings */
+.center {
+    text-align: center;
+}
+
+/* Collapsible Sections */
+.form-section h2 {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 1em;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.form-section h2:hover {
+    background-color: #d0d4d7;
+}
+
+.form-section .content {
+    display: none;
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #007BFF;
+    color: rgb(42, 198, 241);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+#addEducation,
+#addSkill,
+#addProject,
+#addHobby {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: 1px solid #007BFF;
+    background-color: #ffffff;
+    color: #007BFF;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#addEducation:hover,
+#addSkill:hover,
+#addProject:hover,
+#addHobby:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Profile Page Specific Styles */
+.profile-container {
+    background: #d4e4f3;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.profile-container h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-photo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 200px;
+    border-radius: 12px;
+    border: 5px solid #007BFF;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+
+
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.profile-section h3 {
+    font-size: 1.5em;
+    color: #007BFF;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.profile-section p,
+.profile-section ul {
+    font-size: 1em;
+    color: #666;
+    margin: 10px 0;
+}
+
+.profile-section ul {
+    padding-left: 20px;
+}
+
+.profile-section ul li {
+    list-style-type: disc;
+}
+
+.profile-links a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.profile-links a:hover {
+    text-decoration: underline;
+}
